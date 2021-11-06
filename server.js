@@ -61,5 +61,18 @@ io.on('connection', socket => {
     
 });
 
-const PORT = 3000 || process.env.PORT;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// const PORT = 3000 || process.env.PORT;
+// server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);
+
+// // app.listen(process.env.PORT || 3000, function(){
+// //     console.log("Server listening on port %d in %s mode", this.address().port, app.settings.env);
+// // });
+
+// var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
+// var server_host = process.env.YOUR_HOST || '0.0.0.0';
+// server.listen(server_port, server_host, function() {
+//     console.log('Listening on port %d', server_port);
+// });
